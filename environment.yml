@@ -1,0 +1,21 @@
+name: prism
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - xtb
+  - ase=3.27
+  - rdkit=2024.03
+  - numpy
+  - pandas
+  - h5py
+  - matplotlib
+  - scikit-learn
+  - pip
+  - pip:
+    - xgboost
+    - lightgbm
+    - shap
+    - optuna
+    - rxnmapper

@@ -1,0 +1,29 @@
+# Data (too large for git)
+data/raw/
+data/external/
+*.hdf5
+*.h5
+*.pkl
+*.npz
+
+# Outputs
+results/
+*.csv
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+*.egg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# NSCC job outputs
+*.o*
+*.e*
