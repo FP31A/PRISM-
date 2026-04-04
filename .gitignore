@@ -5,6 +5,7 @@ data/external/
 *.h5
 *.pkl
 *.npz
+*.log
 
 # Outputs
 results/
@@ -27,3 +28,6 @@ Thumbs.db
 # NSCC job outputs
 *.o*
 *.e*
+
+# Lab books (local only)
+labbooks/

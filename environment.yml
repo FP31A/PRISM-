@@ -4,18 +4,21 @@ channels:
   - defaults
 dependencies:
   - python=3.11
-  - xtb
-  - ase=3.27
-  - rdkit=2024.03
-  - numpy
-  - pandas
+  - xtb>=6.7
+  - ase>=3.23
+  - rdkit>=2024.03
+  - numpy<2.0            # numpy 2.0 breaks many packages
+  - pandas>=2.0
+  - pyarrow               # for parquet I/O
   - h5py
+  - scipy
   - matplotlib
-  - scikit-learn
+  - scikit-learn>=1.4
   - pip
   - pip:
-    - xgboost
-    - lightgbm
-    - shap
-    - optuna
-    - rxnmapper
+    - xgboost>=2.0
+    - lightgbm>=4.0
+    - shap>=0.44
+    - optuna>=3.5
+    - cclib               # Q-Chem log parser for Grambow
+    - rxnmapper           # install last — heavy PyTorch dep
