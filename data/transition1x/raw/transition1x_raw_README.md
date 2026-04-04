@@ -40,19 +40,22 @@ Single HDF5 file (~7 GB). Structure:
 
 ```
 Transition1x.h5
-├── data/                          # All 10,073 reactions
-│   ├── {chemical_formula}/        # e.g., "C2H4N2O"
-│   │   ├── {reaction_id}/         # e.g., "reaction_0001"
-│   │   │   ├── atomic_numbers     # shape (m,) — element Z for each atom
-│   │   │   ├── positions          # shape (n, m, 3) — Cartesian coords in Å
-│   │   │   ├── energies           # shape (n,) — DFT total energies in eV
-│   │   │   ├── forces             # shape (n, m, 3) — DFT forces in eV/Å
-│   │   │   ├── reactant/          # endpoint geometry (n=1)
-│   │   │   ├── transition_state/  # highest-energy image (n=1)
-│   │   │   └── product/           # endpoint geometry (n=1)
-├── train/                         # Symlinks to data/ (author's split)
-├── val/                           # Symlinks to data/ (author's split)
-└── test/                          # Symlinks to data/ (author's split)
+├── data/                              # All 10,073 reactions
+│   ├── {chemical_formula}/            # e.g., "C2H2N2O"
+│   │   ├── {reaction_id}/             # e.g., "rxn2091"
+│   │   │   ├── atomic_numbers         # shape (m,) — element Z for each atom
+│   │   │   ├── positions              # shape (n, m, 3) — Cartesian coords in Å
+│   │   │   ├── wB97x_6-31G(d).energy  # shape (n,) — DFT total energies in eV
+│   │   │   ├── wB97x_6-31G(d).forces  # shape (n, m, 3) — DFT forces in eV/Å
+│   │   │   ├── reactant/              # endpoint geometry (n=1)
+│   │   │   │   └── [same datasets + hash]
+│   │   │   ├── transition_state/      # highest-energy image (n=1)
+│   │   │   │   └── [same datasets + hash]
+│   │   │   └── product/               # endpoint geometry (n=1)
+│   │   │       └── [same datasets + hash]
+├── train/                             # Symlinks to data/ (author's split)
+├── val/                               # Symlinks to data/ (author's split)
+└── test/                              # Symlinks to data/ (author's split)
 ```
 
 - `n` = number of saved NEB images for that reaction (varies per reaction)
@@ -78,3 +81,8 @@ endpoint/TS geometries per reaction.
 - ~6 reactions have Ea > 10 eV (unphysical NEB artifacts). Filtered in curation.
 - The author's train/val/test split is random; PRISM uses scaffold-based splitting instead.
 - Downloaded: [DATE]
+
+
+wget -O Transition1x.h5 "https://figshare.com/ndownloader/files/36035789"
+
+scp /Users/fidelepoh/PRISM-/data/transition1x/raw/Transition1x.h5 chmv673@asp2a.nscc.sg:~/projects/PRISM/data/transition1x/raw/

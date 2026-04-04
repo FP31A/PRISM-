@@ -105,8 +105,7 @@ def test_ase_idpp():
     interpolation between them.
     """
     from ase import Atoms
-    from ase.neb import NEB
-
+    from ase.mep import NEB
     # Simple test: H2 molecule with two different bond lengths
     reactant = Atoms("H2", positions=[[0, 0, 0], [0, 0, 0.74]])
     product = Atoms("H2", positions=[[0, 0, 0], [0, 0, 1.50]])
@@ -190,7 +189,7 @@ def test_h5py():
 
         if "reactant" in rxn:
             r_pos = rxn["reactant"]["positions"][:]
-            r_eng = rxn["reactant"]["energies"][:]
+            r_eng = rxn["reactant"]["wB97x_6-31G(d).energy"][:]
             print(f"    Reactant: {r_pos.shape[1]} atoms, energy = {r_eng[0]:.4f} eV")
 
 
