@@ -1,6 +1,5 @@
 # Data (too large for git)
-data/raw/
-data/external/
+data/
 *.hdf5
 *.h5
 *.pkl
