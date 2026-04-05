@@ -1,0 +1,23 @@
+#!/bin/bash
+#PBS -N prism_electronic
+#PBS -q normal
+#PBS -l select=1:ncpus=24:mem=64gb
+#PBS -l walltime=04:00:00
+#PBS -o logs/electronic.out
+#PBS -e logs/electronic.err
+
+cd ~/projects/PRISM
+mkdir -p logs
+
+# Proper conda activation in non-interactive shell
+module load miniforge3
+eval "$(conda shell.bash hook)"
+conda activate prism
+
+# Debug — confirm setup before running
+echo "Working dir: $(pwd)"
+echo "Python: $(which python)"
+echo "xTB: $(which xtb)"
+echo "First xyz exists: $(ls data/transition1x/processed/geometries/ | head -1)"
+
+python src/descriptors/electronic.py
