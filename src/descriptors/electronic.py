@@ -25,8 +25,8 @@ def parse_xtb_output(output_text):
         results['E_xtb'] = float(energy_match.group(1)) * 27.2114  # eV
 
     # HOMO and LUMO (already in eV)
-    homo_match = re.search(r"\(HOMO\)\s+.*?([-\d\.]+)\s+eV", output_text)
-    lumo_match = re.search(r"\(LUMO\)\s+.*?([-\d\.]+)\s+eV", output_text)
+    homo_match = re.search(r"([-\d\.]+)\s+\(HOMO\)", output_text)
+    lumo_match = re.search(r"([-\d\.]+)\s+\(LUMO\)", output_text)
     if homo_match and lumo_match:
         homo = float(homo_match.group(1))
         lumo = float(lumo_match.group(1))
