@@ -6,6 +6,7 @@ data/external/
 *.pkl
 *.npz
 *.log
+*.xyz
 
 # Outputs
 results/

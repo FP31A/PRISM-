@@ -86,3 +86,5 @@ endpoint/TS geometries per reaction.
 wget -O Transition1x.h5 "https://figshare.com/ndownloader/files/36035789"
 
 scp /Users/fidelepoh/PRISM-/data/transition1x/raw/Transition1x.h5 chmv673@asp2a.nscc.sg:~/projects/PRISM/data/transition1x/raw/
+
+scp /Users/fidelepoh/PRISM-/tests/test_environment.py chmv673@aspire2a.nus.edu.sg:~/projects/PRISM/path/to/destination/
