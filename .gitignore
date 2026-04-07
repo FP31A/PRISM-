@@ -1,5 +1,7 @@
 # Data (too large for git)
-data/
+data/grambow
+data/transition1x
+
 *.hdf5
 *.h5
 *.pkl
