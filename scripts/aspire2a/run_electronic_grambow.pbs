@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -N prism_elec_gram
+#PBS -q normal
+#PBS -l select=1:ncpus=24:mem=64gb
+#PBS -l walltime=04:00:00
+#PBS -o logs/electronic_grambow.out
+#PBS -e logs/electronic_grambow.err
+
+cd ~/projects/PRISM
+mkdir -p logs data/grambow/descriptors
+
+module load miniforge3
+eval "$(conda shell.bash hook)"
+conda activate prism
+
+python src/descriptors/electronic_grambow.py
