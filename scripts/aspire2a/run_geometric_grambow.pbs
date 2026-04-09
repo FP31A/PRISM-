@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -N prism_geo_gram
+#PBS -q normal
+#PBS -l select=1:ncpus=24:mem=32gb
+#PBS -l walltime=08:00:00
+#PBS -o /home/users/nus/chmv673/projects/PRISM/logs/geometric_grambow.out
+#PBS -e /home/users/nus/chmv673/projects/PRISM/logs/geometric_grambow.err
+
+cd ~/projects/PRISM
+mkdir -p logs data/grambow/descriptors
+
+module load miniforge3
+eval "$(conda shell.bash hook)"
+conda activate prism
+
+python src/descriptors/geometric_grambow.py

@@ -31,16 +31,16 @@ from ase.io import read as ase_read
 from ase.mep import NEB
 
 # --- Configuration ---
-INPUT_PARQUET = "data/transition1x/processed/final_curated_reactions.parquet"
-ELECTRONIC_PARQUET = "data/transition1x/descriptors/stream_a_electronic_descriptors_trans1x.parquet"
+INPUT_PARQUET = "data/grambow/processed/final_curated_reactions.parquet"
+ELECTRONIC_PARQUET = "data/grambow/descriptors/electronic_descriptors.parquet"
 
 # CHANGE (a): Updated output filename to match Task 6.5
-OUTPUT_PARQUET = "data/transition1x/descriptors/stream_b_geometric_tier1.parquet"
-ERROR_LOG = "data/transition1x/descriptors/geometric_errors.log"
+OUTPUT_PARQUET = "data/grambow/descriptors/stream_b_geometric_tier1.parquet"
+ERROR_LOG = "data/grambow/descriptors/geometric_errors.log"
 
 # EXPLICIT PLOT PATHS
-PLOT_PATH_UNFILTERED = "data/transition1x/descriptors/estrain_vs_ea_unfiltered.png"
-PLOT_PATH_CURATED = "data/transition1x/descriptors/estrain_vs_ea_curated.png"
+PLOT_PATH_UNFILTERED = "data/grambow/descriptors/estrain_vs_ea_unfiltered.png"
+PLOT_PATH_CURATED = "data/grambow/descriptors/estrain_vs_ea_curated.png"
 
 N_IMAGES = 5       # Total images including endpoints
 N_JOBS = 24
