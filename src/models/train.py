@@ -76,6 +76,7 @@ TOPOLOGICAL_FEATURES = [
     "delta_ring_atoms", "balaban_J",
     "estate_sum_R", "estate_sum_P", "delta_estate_sum",
     "estate_max_R", "estate_max_P",
+    "is_linear_fallback",
 ]
 RXN_CLASS_PREFIX = "rxn_class_"
 
